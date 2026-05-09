@@ -10,6 +10,7 @@ import {
   Cpu,
 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 import Image from "next/image";
 
@@ -70,6 +71,10 @@ const skills = [
     items: ["Scalability", "Caching", "Kafka", "Security"],
   },
 ];
+
+const calculateExperience = (startYear: number) => {
+  return new Date().getFullYear() - startYear;
+};
 
 export default function Home() {
   return (
@@ -169,7 +174,7 @@ export default function Home() {
             className="flex items-center justify-center lg:justify-end"
           >
             <div className="flex gap-6 items-stretch">
-              
+
               {/* Image */}
               <div className="relative w-[280px] h-[450px] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02] backdrop-blur-sm">
                 <Image
@@ -186,7 +191,7 @@ export default function Home() {
 
               {/* Info Card */}
               <div className="w-[360px] border border-white/10 rounded-[28px] p-5 bg-zinc-950/80 backdrop-blur-sm flex flex-col justify-between">
-                
+
                 <div>
                   <p className="text-zinc-500 text-sm uppercase tracking-wider mb-3">
                     Current Focus
@@ -259,17 +264,19 @@ export default function Home() {
               </p>
 
               <h2 className="text-4xl md:text-4xl font-bold leading-tight">
-                Backend-focused software engineer with experience across scalable APIs, distributed systems, GraphQL services, and modern frontend integration using React.
+                Designing scalable backend systems with a focus on performance, reliability, and clean architecture.
               </h2>
             </div>
 
             <div>
-              <p className="text-zinc-300 leading-relaxed text-lg">
+              <p className="text-zinc-300 leading-relaxed text-lg max-w-2xl">
                 I’m a backend-focused software engineer with experience building scalable APIs,
                 distributed systems, and cloud-ready applications using Java and Spring Boot.
-                I enjoy designing clean architectures, solving performance bottlenecks, and
-                building reliable systems that are maintainable in production environments.
+                I also have experience working with GraphQL services and modern frontend
+                integration using React.
                 <br /><br />
+                I enjoy designing clean architectures, solving performance bottlenecks,
+                and building reliable systems that are maintainable in production environments.
                 My primary interests include microservices, system design, event-driven
                 architecture, caching strategies, and backend scalability.
               </p>
@@ -285,15 +292,22 @@ export default function Home() {
                     </h3>
 
                     <p className="text-zinc-500 text-sm">
-                      2021 — Present · 5 Years
+                      {`2021 — Present · ${calculateExperience(2021)} Years`}
                     </p>
                   </div>
 
                   <p className="text-zinc-300 leading-relaxed">
-                    Working on scalable backend systems, distributed services, and
-                    enterprise-grade applications focused on reliability, performance,
-                    and cloud-ready architecture.
+                    Building scalable backend services and distributed systems for <b>Webex Analyzer</b>,
+                    focused on high-throughput analytics workflows, API performance optimization,
+                    asynchronous processing, and production reliability. Contributed to backend
+                    architecture improvements, deployment reliability, and large-scale request
+                    handling using Java, Spring Boot, Kafka, Redis, and cloud-native engineering practices.
                   </p>
+                  <ul className="mt-4 space-y-2 text-zinc-400 text-sm">
+                    <li>• Improved request latency by 96% in high-throughput processing flows</li>
+                    <li>• Reduced production-critical failures by 95% via automated validation pipelines</li>
+                    <li>• Built large-scale load testing tools for backend reliability validation</li>
+                  </ul>
                 </div>
 
                 {/* IBS Software */}
@@ -311,9 +325,10 @@ export default function Home() {
                   </div>
 
                   <p className="text-zinc-300 leading-relaxed">
-                    Built and maintained backend services and enterprise applications
-                    using Java technologies while contributing to scalable software
-                    solutions in the aviation and travel domain.
+                    Contributed to modernization of aviation and travel-domain platforms by
+                    migrating legacy systems into Spring Boot microservices. Worked on Backend-for-Frontend
+                    (BFF) architecture, scalable API design, GraphQL integration, and micro frontend
+                    enablement for enterprise applications.
                   </p>
                 </div>
 
@@ -376,40 +391,40 @@ export default function Home() {
         id="skills"
         className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10"
       >
-       <motion.div
+        <motion.div
           className="max-w-7xl mx-auto px-6 py-28"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-        
-        <div className="mb-14">
-          <p className="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-4">
-            Skills
-          </p>
 
-          <h2 className="text-4xl font-bold">Technical Expertise</h2>
-        </div>
+          <div className="mb-14">
+            <p className="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-4">
+              Skills
+            </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((skill) => (
-            <div
-              key={skill.title}
-              className="border border-white/10 rounded-3xl p-6 bg-zinc-950"
-            >
-              <div className="mb-5 text-zinc-300">{skill.icon}</div>
+            <h2 className="text-4xl font-bold">Technical Expertise</h2>
+          </div>
 
-              <h3 className="text-xl font-semibold mb-5">{skill.title}</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {skills.map((skill) => (
+              <div
+                key={skill.title}
+                className="border border-white/10 rounded-3xl p-6 bg-zinc-950"
+              >
+                <div className="mb-5 text-zinc-300">{skill.icon}</div>
 
-              <div className="space-y-3 text-zinc-400">
-                {skill.items.map((item) => (
-                  <p key={item}>{item}</p>
-                ))}
+                <h3 className="text-xl font-semibold mb-5">{skill.title}</h3>
+
+                <div className="space-y-3 text-zinc-400">
+                  {skill.items.map((item) => (
+                    <p key={item}>{item}</p>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </motion.div>
       </section>
 
@@ -434,7 +449,7 @@ export default function Home() {
 
           <div className="flex justify-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/Rakeshgsekhar"
               target="_blank"
               className="p-4 rounded-full border border-white/10 hover:border-white transition"
             >
@@ -442,7 +457,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/rakesh-geethakumari-sekhar-498b4024/"
               target="_blank"
               className="p-4 rounded-full border border-white/10 hover:border-white transition"
             >
@@ -450,7 +465,15 @@ export default function Home() {
             </a>
 
             <a
-              href="mailto:youremail@gmail.com"
+              href="https://leetcode.com/u/iamRakeshGSekhar/"
+              target="_blank"
+              className="p-4 rounded-full border border-white/10 hover:border-white transition"
+            >
+              <SiLeetcode size={22} />
+            </a>
+
+            <a
+              href="mailto:iam.rakeshgsekhar@gmail.com"
               className="p-4 rounded-full border border-white/10 hover:border-white transition"
             >
               <Mail />
