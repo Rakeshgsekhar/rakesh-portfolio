@@ -106,7 +106,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-20 pb-28">
-        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-20 items-center lg:text-left pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-20 items-center lg:text-left pt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ export default function Home() {
               systems.
             </p>
 
-            <div className="flex flex-wrap gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
               <a
                 href="#projects"
                 className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 hover:bg-zinc-200 transition-all duration-300"
@@ -173,10 +173,10 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="flex items-center justify-center lg:justify-end"
           >
-            <div className="flex gap-6 items-stretch">
+            <div className="flex flex-col md:flex-row gap-6 items-center">
 
               {/* Image */}
-              <div className="relative w-[280px] h-[450px] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02] backdrop-blur-sm">
+              <div className="relative w-[220px] h-[320px] md:w-[250px] md:h-[390px] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02] backdrop-blur-sm">
                 <Image
                   src="/profile.png"
                   alt="Rakesh"
@@ -190,7 +190,7 @@ export default function Home() {
               </div>
 
               {/* Info Card */}
-              <div className="w-[360px] border border-white/10 rounded-[28px] p-5 bg-zinc-950/80 backdrop-blur-sm flex flex-col justify-between">
+              <div className="w-full md:w-[360px] border border-white/10 rounded-[28px] p-5 bg-zinc-950/80 backdrop-blur-sm flex flex-col justify-between">
 
                 <div>
                   <p className="text-zinc-500 text-sm uppercase tracking-wider mb-3">
