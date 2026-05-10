@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -77,14 +78,60 @@ const calculateExperience = (startYear: number) => {
 };
 
 export default function Home() {
-  return (
-    <main className="relative bg-black text-white min-h-screen overflow-hidden">
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full" />
+  const [greenMode, setGreenMode] = useState(true);
+  const sectionBg = greenMode
+  ? "bg-emerald-950"
+  : "bg-black";
 
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full" />
+const cardBg = greenMode
+  ? "bg-emerald-950/70"
+  : "bg-zinc-950/80";
+
+const softBg = greenMode
+  ? "bg-emerald-900/20"
+  : "bg-white/[0.02]";
+
+const borderColor = greenMode
+  ? "border-emerald-500/20"
+  : "border-white/10";
+
+const pillBg = greenMode
+  ? "bg-emerald-800/20"
+  : "bg-white/[0.05]";
+
+const bgGLow = greenMode 
+  ? "bg-emerald-500/10"
+  : "bg-purple-500/10";
+
+  const bgBlueEm = greenMode
+    ? "bg-emerald-500/10"
+    : "bg-blue-500/10";
+  
+
+  const projectBg = greenMode
+  ? "bg-emerald-950"
+  : "bg-zinc-950";
+
+  return (
+    <main className={`relative text-white min-h-screen overflow-hidden transition-colors duration-500 ${sectionBg}`}>
+      <div className={`absolute top-0 left-0 w-[500px] h-[500px]  blur-[120px] rounded-full${bgGLow}`} />
+
+      <div className={`absolute bottom-0 right-0 w-[500px] h-[500px]  blur-[120px] rounded-full ${bgBlueEm}`} />
       {/* Navbar */}
       <header className="sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl bg-black/60">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <button
+            onClick={() => setGreenMode(!greenMode)}
+            className={`w-14 h-8 rounded-full flex items-center px-1 transition-all duration-300 ${greenMode
+              ? "bg-emerald-500"
+              : "bg-zinc-700"
+              }`}
+          >
+            <div
+              className={`w-6 h-6 rounded-full bg-white transition-transform duration-300 ${greenMode ? "translate-x-6" : ""
+                }`}
+            />
+          </button>
           <h1 className="text-xl font-bold tracking-wide">RAKESH G SEKHAR</h1>
 
           <nav className="hidden md:flex gap-10 text-sm text-zinc-400">
@@ -145,7 +192,7 @@ export default function Home() {
               </a>
             </div>
             <div className="mt-10 grid grid-cols-2 gap-4 max-w-xl">
-              <div className="border border-white/10 rounded-2xl p-4 bg-white/[0.02]">
+              <div className={`border border-white/10 rounded-2xl p-4 ${softBg}]`}>
                 <p className="text-zinc-500 text-sm mb-2">
                   Currently Building
                 </p>
@@ -155,7 +202,7 @@ export default function Home() {
                 </h3>
               </div>
 
-              <div className="border border-white/10 rounded-2xl p-4 bg-white/[0.02]">
+              <div className={`border border-white/10 rounded-2xl p-4 ${softBg}]`}>
                 <p className="text-zinc-500 text-sm mb-2">
                   Exploring
                 </p>
@@ -176,9 +223,9 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-6 items-center">
 
               {/* Image */}
-              <div className="relative w-[220px] h-[320px] md:w-[250px] md:h-[390px] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl bg-white/[0.02] backdrop-blur-sm">
+              <div className={`relative w-[220px] h-[320px] md:w-[250px] md:h-[390px] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl ${softBg} backdrop-blur-sm`}>
                 <Image
-                  src="/profile.png"
+                  src={`${greenMode ? "/profileEM.png" : "/profile.png"}`}
                   alt="Rakesh"
                   fill
                   sizes="(max-width: 768px) 100vw, 280px"
@@ -190,7 +237,7 @@ export default function Home() {
               </div>
 
               {/* Info Card */}
-              <div className="w-full md:w-[360px] border border-white/10 rounded-[28px] p-5 bg-zinc-950/80 backdrop-blur-sm flex flex-col justify-between">
+              <div className={`w-full md:w-[360px] border border-white/10 rounded-[28px] p-5 ${cardBg} backdrop-blur-sm flex flex-col justify-between`}>
 
                 <div>
                   <p className="text-zinc-500 text-sm uppercase tracking-wider mb-3">
@@ -248,7 +295,7 @@ export default function Home() {
       {/* About */}
       <section
         id="about"
-        className="border-t border-white/10 bg-zinc-950/40"
+        className={`border-t border-white/10 ${greenMode ? "bg-emerald-900/20" : "bg-zinc-950/40"}`}
       >
         <motion.div
           className="max-w-7xl mx-auto px-6 py-28"
@@ -359,7 +406,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="border border-white/10 rounded-3xl p-8 bg-zinc-950 hover:border-white/20 transition"
+              className={`border border-white/10 rounded-3xl p-8 ${projectBg} hover:border-white/20 transition`}
             >
               <div className="flex items-start justify-between mb-6">
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
@@ -411,7 +458,7 @@ export default function Home() {
             {skills.map((skill) => (
               <div
                 key={skill.title}
-                className="border border-white/10 rounded-3xl p-6 bg-zinc-950"
+                className={`border border-white/10 rounded-3xl p-6 ${projectBg}`}
               >
                 <div className="mb-5 text-zinc-300">{skill.icon}</div>
 
