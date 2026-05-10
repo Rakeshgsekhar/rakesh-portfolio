@@ -118,7 +118,7 @@ const bgGLow = greenMode
 
       <div className={`absolute bottom-0 right-0 w-[500px] h-[500px]  blur-[120px] rounded-full ${bgBlueEm}`} />
       {/* Navbar */}
-      <header className="sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl bg-black/60">
+      <header className={`sticky top-0 z-50 border-b ${borderColor} backdrop-blur-xl bg-black/60`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <button
             onClick={() => setGreenMode(!greenMode)}
@@ -192,7 +192,7 @@ const bgGLow = greenMode
               </a>
             </div>
             <div className="mt-10 grid grid-cols-2 gap-4 max-w-xl">
-              <div className={`border border-white/10 rounded-2xl p-4 ${softBg}]`}>
+              <div className={`border ${borderColor} rounded-2xl p-4 ${softBg}]`}>
                 <p className="text-zinc-500 text-sm mb-2">
                   Currently Building
                 </p>
@@ -202,7 +202,7 @@ const bgGLow = greenMode
                 </h3>
               </div>
 
-              <div className={`border border-white/10 rounded-2xl p-4 ${softBg}]`}>
+              <div className={`border ${borderColor} rounded-2xl p-4 ${softBg}]`}>
                 <p className="text-zinc-500 text-sm mb-2">
                   Exploring
                 </p>
@@ -223,7 +223,7 @@ const bgGLow = greenMode
             <div className="flex flex-col md:flex-row gap-6 items-center">
 
               {/* Image */}
-              <div className={`relative w-[220px] h-[320px] md:w-[250px] md:h-[390px] rounded-[28px] overflow-hidden border border-white/10 shadow-2xl ${softBg} backdrop-blur-sm`}>
+              <div className={`relative w-[220px] h-[320px] md:w-[250px] md:h-[390px] rounded-[28px] overflow-hidden border ${borderColor} shadow-2xl ${softBg} backdrop-blur-sm`}>
                 <Image
                   src={`${greenMode ? "/profileEM.png" : "/profile.png"}`}
                   alt="Rakesh"
@@ -237,7 +237,7 @@ const bgGLow = greenMode
               </div>
 
               {/* Info Card */}
-              <div className={`w-full md:w-[360px] border border-white/10 rounded-[28px] p-5 ${cardBg} backdrop-blur-sm flex flex-col justify-between`}>
+              <div className={`w-full md:w-[360px] border ${borderColor} rounded-[28px] p-5 ${cardBg} backdrop-blur-sm flex flex-col justify-between`}>
 
                 <div>
                   <p className="text-zinc-500 text-sm uppercase tracking-wider mb-3">
@@ -249,19 +249,19 @@ const bgGLow = greenMode
                   </h3>
 
                   <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="border border-white/10 rounded-2xl p-4">
+                    <div className={`border ${borderColor} rounded-2xl p-4`}>
                       <p className="text-zinc-500 text-sm mb-2">Experience</p>
                       <h4 className="text-2xl font-bold">7+ Years</h4>
                     </div>
 
-                    <div className="border border-white/10 rounded-2xl p-4">
+                    <div className={`border ${borderColor} rounded-2xl p-4`}>
                       <p className="text-zinc-500 text-sm mb-2">Specialization</p>
                       <h4 className="text-2xl font-bold">Backend</h4>
                     </div>
                   </div>
                 </div>
 
-                <div className="border border-white/10 rounded-2xl p-5">
+                <div className={`border ${borderColor} rounded-2xl p-5`}>
                   <p className="text-zinc-500 text-sm mb-4">
                     Core Stack
                   </p>
@@ -279,7 +279,7 @@ const bgGLow = greenMode
                     ].map((tech) => (
                       <span
                         key={tech}
-                        className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm"
+                        className={`px-4 py-2 rounded-full bg-white/5 border ${borderColor} text-sm`}
                       >
                         {tech}
                       </span>
@@ -295,7 +295,7 @@ const bgGLow = greenMode
       {/* About */}
       <section
         id="about"
-        className={`border-t border-white/10 ${greenMode ? "bg-emerald-900/20" : "bg-zinc-950/40"}`}
+        className={`border-t ${borderColor} ${greenMode ? "bg-emerald-900/20" : "bg-zinc-950/40"}`}
       >
         <motion.div
           className="max-w-7xl mx-auto px-6 py-28"
@@ -330,7 +330,7 @@ const bgGLow = greenMode
               <div className="mt-14 space-y-8">
 
                 {/* Cisco */}
-                <div className="border-l border-white/10 pl-6 relative hover:border-white/30 transition">
+                <div className={`border-l ${borderColor} pl-6 relative hover:border-white/30 transition`}>
                   <div className="absolute w-3 h-3 bg-white rounded-full -left-[6px] top-2 shadow-[0_0_12px_rgba(255,255,255,0.8)]" />
 
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
@@ -358,7 +358,7 @@ const bgGLow = greenMode
                 </div>
 
                 {/* IBS Software */}
-                <div className="border-l border-white/10 pl-6 relative hover:border-white/30 transition">
+                <div className={`border-l ${borderColor} pl-6 relative hover:border-white/30 transition`}>
                   <div className="absolute w-3 h-3 bg-white rounded-full -left-[6px] top-2 shadow-[0_0_12px_rgba(255,255,255,0.8)]" />
 
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
@@ -388,7 +388,7 @@ const bgGLow = greenMode
       {/* Projects */}
       <section
         id="projects"
-        className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10"
+        className={`max-w-7xl mx-auto px-6 py-24 border-t ${borderColor}`}
       >
         <div className="mb-14">
           <p className="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-4">
@@ -406,7 +406,7 @@ const bgGLow = greenMode
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`border border-white/10 rounded-3xl p-8 ${projectBg} hover:border-white/20 transition`}
+              className={`border ${borderColor} rounded-3xl p-8 ${projectBg} hover:border-white/20 transition`}
             >
               <div className="flex items-start justify-between mb-6">
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
@@ -422,7 +422,7 @@ const bgGLow = greenMode
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-2 rounded-full text-sm bg-white/5 border border-white/10"
+                    className={`px-3 py-2 rounded-full text-sm bg-white/5 border ${borderColor}`}
                   >
                     {tech}
                   </span>
@@ -436,7 +436,7 @@ const bgGLow = greenMode
       {/* Skills */}
       <section
         id="skills"
-        className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10"
+        className={`max-w-7xl mx-auto px-6 py-24 border-t ${borderColor}`}
       >
         <motion.div
           className="max-w-7xl mx-auto px-6 py-28"
@@ -458,7 +458,7 @@ const bgGLow = greenMode
             {skills.map((skill) => (
               <div
                 key={skill.title}
-                className={`border border-white/10 rounded-3xl p-6 ${projectBg}`}
+                className={`border ${borderColor} rounded-3xl p-6 ${projectBg}`}
               >
                 <div className="mb-5 text-zinc-300">{skill.icon}</div>
 
@@ -478,7 +478,7 @@ const bgGLow = greenMode
       {/* Contact */}
       <section
         id="contact"
-        className="max-w-7xl mx-auto px-6 py-24 border-t border-white/10"
+        className={`max-w-7xl mx-auto px-6 py-24 border-t ${borderColor}`}
       >
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-4">
@@ -498,7 +498,7 @@ const bgGLow = greenMode
             <a
               href="https://github.com/Rakeshgsekhar"
               target="_blank"
-              className="p-4 rounded-full border border-white/10 hover:border-white transition"
+              className={`p-4 rounded-full border ${borderColor} hover:border-white transition`}
             >
               <FaGithub size={22} />
             </a>
@@ -506,7 +506,7 @@ const bgGLow = greenMode
             <a
               href="https://www.linkedin.com/in/rakesh-geethakumari-sekhar-498b4024/"
               target="_blank"
-              className="p-4 rounded-full border border-white/10 hover:border-white transition"
+              className={`p-4 rounded-full border ${borderColor} hover:border-white transition`}
             >
               <FaLinkedin size={22} />
             </a>
@@ -514,14 +514,14 @@ const bgGLow = greenMode
             <a
               href="https://leetcode.com/u/iamRakeshGSekhar/"
               target="_blank"
-              className="p-4 rounded-full border border-white/10 hover:border-white transition"
+              className={`p-4 rounded-full border ${borderColor} hover:border-white transition`}
             >
               <SiLeetcode size={22} />
             </a>
 
             <a
               href="mailto:iam.rakeshgsekhar@gmail.com"
-              className="p-4 rounded-full border border-white/10 hover:border-white transition"
+              className={`p-4 rounded-full border ${borderColor} hover:border-white transition`}
             >
               <Mail />
             </a>
