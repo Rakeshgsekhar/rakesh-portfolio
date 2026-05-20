@@ -54,22 +54,22 @@ const skills = [
   {
     icon: <Server size={24} />,
     title: "Backend Engineering",
-    items: ["Java, Go", "Spring Boot", "Microservices", "REST APIs, gRPC"],
+    items: ["Java", "Spring Boot", "Kafka", "Microservices", "REST APIs, gRPC"],
   },
   {
     icon: <Database size={24} />,
     title: "Databases",
-    items: ["PostgreSQL", "MySQL", "Redis", "MongoDB"],
+    items: ["PostgreSQL", "Redis", "MongoDB", "Elasticsearch"],
   },
   {
     icon: <Cloud size={24} />,
     title: "Cloud & DevOps",
-    items: ["Docker", "AWS", "CI/CD", "GitHub Actions"],
+    items: ["Kubernetes", "Docker", "AWS (EKS, EC2)","CI/CD", "Helm"],
   },
   {
     icon: <Cpu size={24} />,
     title: "System Design",
-    items: ["Scalability", "Caching", "Kafka", "Security"],
+    items: ["Scalability", "Distributed Caching", "Event-Driven Architecture", "High Availability"],
   },
 ];
 
@@ -318,7 +318,8 @@ export default function Home() {
             <div>
               <p className="text-zinc-300 leading-relaxed text-lg max-w-2xl">
                 I’m a backend-focused software engineer with experience building scalable APIs,
-                distributed systems, and cloud-ready applications using Java and Spring Boot.
+                distributed systems, and cloud-native applications using Java and Spring Boot.
+                I have experince in modern service integration and API-driven application architecture.
                 I also have experience working with GraphQL services and modern frontend
                 integration using React.
                 <br /><br />
@@ -345,7 +346,7 @@ export default function Home() {
 
                   <p className="text-zinc-300 leading-relaxed">
                     Building scalable backend services and distributed systems for <b>Webex Analyzer</b>,
-                    focused on high-throughput analytics workflows, API performance optimization,
+                    focused on high-throughput distributed analytics workflows, API performance optimization,
                     asynchronous processing, and production reliability. Contributed to backend
                     architecture improvements, deployment reliability, and large-scale request
                     handling using Java, Spring Boot, Kafka, Redis, and cloud-native engineering practices.
