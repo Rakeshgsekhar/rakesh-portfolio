@@ -80,37 +80,37 @@ const calculateExperience = (startYear: number) => {
 export default function Home() {
   const [greenMode, setGreenMode] = useState(true);
   const sectionBg = greenMode
-  ? "bg-emerald-950"
-  : "bg-black";
+    ? "bg-emerald-950"
+    : "bg-black";
 
-const cardBg = greenMode
-  ? "bg-emerald-950/70"
-  : "bg-zinc-950/80";
+  const cardBg = greenMode
+    ? "bg-emerald-950/70"
+    : "bg-zinc-950/80";
 
-const softBg = greenMode
-  ? "bg-emerald-900/20"
-  : "bg-white/[0.02]";
+  const softBg = greenMode
+    ? "bg-emerald-900/20"
+    : "bg-white/[0.02]";
 
-const borderColor = greenMode
-  ? "border-emerald-500/20"
-  : "border-white/10";
+  const borderColor = greenMode
+    ? "border-emerald-500/20"
+    : "border-white/10";
 
-const pillBg = greenMode
-  ? "bg-emerald-800/20"
-  : "bg-white/[0.05]";
+  const pillBg = greenMode
+    ? "bg-emerald-800/20"
+    : "bg-white/[0.05]";
 
-const bgGLow = greenMode 
-  ? "bg-emerald-500/10"
-  : "bg-purple-500/10";
+  const bgGLow = greenMode
+    ? "bg-emerald-500/10"
+    : "bg-purple-500/10";
 
   const bgBlueEm = greenMode
     ? "bg-emerald-500/10"
     : "bg-blue-500/10";
-  
+
 
   const projectBg = greenMode
-  ? "bg-emerald-950"
-  : "bg-zinc-950";
+    ? "bg-emerald-950"
+    : "bg-zinc-950";
 
   return (
     <main className={`relative text-white min-h-screen overflow-hidden transition-colors duration-500 ${sectionBg}`}>
@@ -160,7 +160,7 @@ const bgGLow = greenMode
             transition={{ duration: 0.6 }}
           >
             <p className="text-zinc-400 uppercase tracking-[0.3em] text-sm mb-5">
-              Backend Engineer
+              CLOUD NATIVE BACKEND ENGINEER
             </p>
 
             <h1 className="text-5xl md:text-5xl lg:text-[3.2rem] font-bold leading-[1] tracking-tight mb-8 max-w-[720px]">
@@ -170,10 +170,10 @@ const bgGLow = greenMode
             </h1>
 
             <p className="text-zinc-300 text-lg leading-relaxed max-w-2xl mb-10">
-              Backend-focused software engineer specializing in Spring Boot,
-              microservices, Kafka, Redis, and cloud-native architectures.
-              Passionate about building reliable, scalable, and production-ready
-              systems.
+              Senior software engineer specializing in distributed systems,
+              cloud-native platforms, and scalable backend architecture.
+              Experienced in Kubernetes, Spring Boot, Kafka, Redis, and
+              production reliability engineering.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">
@@ -185,7 +185,7 @@ const bgGLow = greenMode
               </a>
 
               <a
-                href="/resume.pdf"
+                href="/rakeshgSekhar.pdf"
                 className="px-8 py-4 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm hover:border-white/40 hover:bg-white/10 transition-all duration-300"
               >
                 Download Resume
@@ -198,7 +198,7 @@ const bgGLow = greenMode
                 </p>
 
                 <h3 className="text-white font-medium">
-                  AI Travel Planning Platform
+                  Intelligent Travel Planning Platform
                 </h3>
               </div>
 
@@ -245,18 +245,19 @@ const bgGLow = greenMode
                   </p>
 
                   <h3 className="text-3xl font-bold leading-tight mb-8">
-                    Scalable Distributed Systems
+                    Cloud Native Distributed Systems
                   </h3>
 
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className={`border ${borderColor} rounded-2xl p-4`}>
-                      <p className="text-zinc-500 text-sm mb-2">Experience</p>
-                      <h4 className="text-2xl font-bold">7+ Years</h4>
+                      <p className="text-zinc-500 text-sm mb-2">Production Engineering</p>
+                      <h4 className="text-xl font-bold">7+ Years</h4>
                     </div>
 
                     <div className={`border ${borderColor} rounded-2xl p-4`}>
                       <p className="text-zinc-500 text-sm mb-2">Specialization</p>
-                      <h4 className="text-2xl font-bold">Backend</h4>
+                      <h4 className="text-xl font-bold">Distributed
+                        Backend</h4>
                     </div>
                   </div>
                 </div>
@@ -274,8 +275,7 @@ const bgGLow = greenMode
                       "Redis",
                       "PostgreSQL",
                       "Docker",
-                      "GraphQL",
-                      "React"
+                      "Kubernetes"
                     ].map((tech) => (
                       <span
                         key={tech}
